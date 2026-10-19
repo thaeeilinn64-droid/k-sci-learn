@@ -1,0 +1,14 @@
+ABOUT US PAGE - K-SCI LEARN
+
+Open the website and click "About Us" (URL hash #/team).
+Eight photos have been placed in exactly the upload order, member-1.jpg through member-8.jpg.
+
+To change team member details:
+1. Open js/app.js
+2. Find const TEAM_MEMBERS = [
+3. For each photo, edit name, seat, section and role.
+4. Save, reload the page.
+
+Only one SAMPLE entry was provided. It has been placed TEMPORARILY on photo #5 (the first female portrait), NOT verified as the actual person. Please confirm the correct image and send the seven other members' details to finalize.
+
+The original About page (#/about), all games, login/Firebase and other features are preserved.

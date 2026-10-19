@@ -1,0 +1,14 @@
+Firebase email verification setup and testing
+
+1. Firebase Console > Authentication > Sign-in method > Email/Password: Enabled.
+2. Authentication > Settings > Authorized domains: add your website domain (for localhost add localhost if absent).
+3. Run this website over http://localhost or HTTPS, not file://. In VS Code use Live Server.
+4. Open login.html and register a real email with a strong password.
+5. Open your mailbox (including spam) and click Firebase's verification link.
+6. Return to Login tab and sign in. Only verified email owners can enter index.html.
+7. Test using an email address you cannot access: registration may create a pending Firebase user, but the user cannot sign in or access the website without verification.
+8. Firebase Console > Authentication > Users shows newly created accounts and email verification status.
+
+Existing localStorage-only accounts do not grant access: users must register through Firebase.
+The rest of the site's client-side content, favorites and quizzes are unchanged.
+IMPORTANT: Do not deploy Firebase as an unrestricted privileged backend: client side user data is local to each browser.

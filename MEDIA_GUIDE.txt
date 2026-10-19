@@ -1,0 +1,22 @@
+SCIENCE LESSON MEDIA GUIDE
+==========================
+
+The lesson titles are defined in js/data.js. Video playback already uses the
+lesson ID and selected narrator/avatar. Put the matching video files here:
+
+public/videos/chapter-X/LESSON_ID_mm_female.mp4
+public/videos/chapter-X/LESSON_ID_mm_male.mp4
+public/videos/chapter-X/LESSON_ID_karen_female.mp4
+public/videos/chapter-X/LESSON_ID_karen_male.mp4
+
+If an avatar-specific file is not present, the existing player falls back to:
+public/videos/chapter-X/LESSON_ID.mp4
+
+Examples:
+public/videos/chapter-1/1.1_mm_female.mp4
+public/videos/chapter-2/2.1_mm_female.mp4
+public/videos/chapter-4/4.1_mm_female.mp4
+public/videos/chapter-8/8.1_mm_female.mp4
+
+The selected avatar determines which matching video is opened. The video
+contains its own sound; no external audio file is required.

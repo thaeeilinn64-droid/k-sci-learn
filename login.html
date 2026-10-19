@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="my">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>K-SCI LEARN</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Myanmar:wght@400;600;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="icon" type="image/png" href="./images/ksci-learn.png">
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body class="is-login">
+  <section class="login">
+    <div class="login-art" style="background-image:url('./images/library.jpg')">
+      <div class="glass">
+        <h1>📚 သိပ္ပံလောကမှ<br>ကြိုဆိုပါတယ်!</h1>
+        <p>ဗီဒီယိုတွေ၊ အသံတွေနဲ့ အတူတူ ပျော်ပျော်ရွှင်ရွှင် သင်ယူကြစို့။</p>
+      </div>
+      <span class="float-badge fb0"><i data-lucide="book-open"></i> သင်ခန်းစာ</span>
+      <span class="float-badge fb1"><i data-lucide="brain"></i> ဉာဏ်စမ်း</span>
+      <span class="float-badge fb2"><i data-lucide="star"></i> ကြယ်ပွင့်</span>
+      <span class="float-badge fb3"><i data-lucide="rocket"></i> စူးစမ်းလေ့လာ</span>
+    </div>
+
+    <div class="login-side">
+      <div class="login-card">
+        <div class="logo-bubble"><i data-lucide="graduation-cap"></i></div>
+        <div class="tabs" role="tablist">
+          <button type="button" class="tabbtn active" data-tab="login" role="tab">ဝင်ရောက်ရန်</button>
+          <button type="button" class="tabbtn" data-tab="register" role="tab">အကောင့်ဖွင့်ရန်</button>
+        </div>
+
+        <form id="loginForm" novalidate>
+          <div class="float-field">
+            <input name="identifier" id="l-id" type="email" placeholder=" " required maxlength="120"
+              autocomplete="email">
+            <label for="l-id">အီးမေးလ်</label><i data-lucide="user"></i>
+          </div>
+          <div class="float-field">
+            <input name="password" id="l-pw" type="password" placeholder=" " required maxlength="72"
+              autocomplete="current-password">
+            <label for="l-pw">လျှို့ဝှက်နံပါတ်</label><i data-lucide="lock"></i>
+            <button type="button" class="pwtoggle" aria-label="လျှို့ဝှက်နံပါတ် ပြ/ဖျောက်"><i
+                data-lucide="eye"></i></button>
+          </div>
+          <p class="form-error" role="alert" hidden></p>
+          <button class="btn big" type="submit"><i data-lucide="smile"></i> စတင်လိုက်ရအောင်!</button>
+
+          <div
+            style="margin-top: 1rem; font-size: 0.85rem; color: var(--m); background: #f8fafc; border-radius: 12px; padding: 0.5rem 0.8rem; border: 1px dashed var(--b);">
+            💡 <b></b>
+          </div>
+        </form>
+
+        <form id="registerForm" novalidate hidden>
+          <div class="float-field">
+            <input name="username" id="r-name" placeholder=" " required minlength="2" maxlength="30"
+              autocomplete="username">
+            <label for="r-name">အမည်</label><i data-lucide="user"></i>
+          </div>
+          <div class="float-field">
+            <input name="email" id="r-mail" type="email" placeholder=" " required maxlength="120" autocomplete="email">
+            <label for="r-mail">အီးမေးလ်</label><i data-lucide="mail"></i>
+          </div>
+          <div class="float-field">
+            <input name="password" id="r-pw" type="password" placeholder=" " required maxlength="72"
+              autocomplete="new-password">
+            <label for="r-pw">လျှို့ဝှက်နံပါတ်</label><i data-lucide="lock"></i>
+            <button type="button" class="pwtoggle" aria-label="လျှို့ဝှက်နံပါတ် ပြ/ဖျောက်"><i
+                data-lucide="eye"></i></button>
+          </div>
+          <ul class="pw-checklist" id="pwChecklist" aria-live="polite">
+            <li data-rule="len">အနည်းဆုံး ၈ လုံး</li>
+            <li data-rule="upper">အင်္ဂလိပ်စာလုံးကြီး (A-Z) အနည်းဆုံး ၁ လုံး</li>
+            <li data-rule="lower">အင်္ဂလိပ်စာလုံးသေး (a-z) အနည်းဆုံး ၁ လုံး</li>
+            <li data-rule="digit">ဂဏန်း (0-9) အနည်းဆုံး ၁ လုံး</li>
+            <li data-rule="special">အထူးသင်္ကေတ (!@#$%^&amp;*(),.?":{}|&lt;&gt;) အနည်းဆုံး ၁ လုံး</li>
+          </ul>
+          <p class="form-error" role="alert" hidden></p>
+          <button class="btn big" type="submit"><i data-lucide="party-popper"></i> အကောင့်ဖွင့်မည်</button>
+        </form>
+      </div>
+    </div>
+  </section>
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+  <script src="https://accounts.google.com/gsi/client"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-auth-compat.js"></script>
+  <script src="./js/firebase-config.js"></script>
+  <script src="./js/data.js"></script>
+  <script src="./js/auth.js"></script>
+</body>
+
+</html>

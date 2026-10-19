@@ -1,0 +1,12 @@
+K-SCI LEARN - Google Account Login Setup
+
+Google account verification is implemented in js/auth.js using Google OAuth 2.0 for the browser.
+
+IMPORTANT:
+- Do NOT put a Google password in the project.
+- A Web OAuth Client ID is required. A Google API key is not the credential used to authenticate a user's Google account.
+- Replace YOUR_GOOGLE_OAUTH_CLIENT_ID.apps.googleusercontent.com in js/auth.js with the Web application OAuth Client ID created for this project.
+- For local development with VS Code Live Server, add the exact origin used by Live Server (for example http://localhost:5500) under Authorized JavaScript origins in Google Cloud.
+- The login flow verifies that Google returns a verified email and that it exactly matches the email entered in the K-SCI LEARN login form.
+
+The current ZIP intentionally contains the placeholder Client ID because credentials must be created in the owner's Google Cloud project. No password or secret is embedded in the project.
